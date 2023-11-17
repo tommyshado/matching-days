@@ -115,7 +115,7 @@ describe("Matching days test", () => {
         assert.deepEqual(
             {
                 day: "Monday",
-                className: "success",
+                classList: "success",
             },
             getSelectedDay
         );
