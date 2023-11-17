@@ -29,7 +29,7 @@ describe("Matching days test", () => {
 
     it("should be able to select a day and get the selected day", () => {
         // takes in a string date
-        app.selectDay("Monday");
+        app.warningClassName("Monday");
 
         const days = app.getDays();
         let selectedDay;
@@ -45,7 +45,7 @@ describe("Matching days test", () => {
 
     it("should be able to add a warning class list for a selected day", () => {
         // takes in a string date
-        app.selectDay("Sunday");
+        app.warningClassName("Sunday");
 
         const days = app.getDays();
         let getSelectedDay = {};
@@ -67,10 +67,10 @@ describe("Matching days test", () => {
 
     it("should be able to add a danger class name for another selected day", () => {
         // select one day
-        app.selectDay("Monday");
+        app.warningClassName("Monday");
 
         // select another day
-        app.selectDay("Sunday");
+        app.dangerClassName("Sunday");
 
 
         const days = app.getDays();
@@ -99,9 +99,9 @@ describe("Matching days test", () => {
 
     it("should be able to add a success class name for two selected days on the same day", () => {
         // select two same days
-        app.selectDay("Monday");
+        app.warningClassName("Monday");
 
-        app.selectDay("Monday");
+        app.dangerClassName("Monday");
 
         const days = app.getDays();
         let getSelectedDay = {};
@@ -123,10 +123,10 @@ describe("Matching days test", () => {
 
     it("should be able to update a selected day", () => {
         // select one day
-        app.selectDay("Sunday");
+        app.warningClassName("Sunday");
 
         // select another day
-        app.selectDay("Monday");
+        app.dangerClassName("Monday");
 
         const days = app.getDays();
         let getSelectedDay = [];
@@ -140,12 +140,12 @@ describe("Matching days test", () => {
         assert.deepEqual(
             [
                 {
-                    day: "Sunday",
-                    classList: "warning",
-                },
-                {
                     day: "Monday",
                     classList: "danger",
+                },
+                {
+                    day: "Sunday",
+                    classList: "warning",
                 },
             ],
             getSelectedDay
@@ -160,15 +160,15 @@ describe("Matching days test", () => {
         days__.forEach((dayObj) => {
             if (dayObj.classList) {
                 getSelectedDay__.push(dayObj);
-            }
+            };
         });
 
         assert.deepEqual(
-        [
-            {
-                day: "Monday",
-                classList: "danger",
-            },
-        ], getSelectedDay__);
+            [
+                {
+                    day: "Monday",
+                    classList: "danger",
+                },
+            ], getSelectedDay__);
     });
 });

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching days</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script type="text/x-template" class="template" defer>
+        {{#each this}}
+            <div class="{{classList}}">
+                <li>{{day}}</li>
+            </div>
+        {{/each}}
+    </script>
+
+</head>
+
+<body>
+    <!-- Days list -->
+    <ul class="days"></ul>
+
+    <!-- Dates -->
+    <div class="dates">
+        <div class="firstDateContainer">
+            <label for="firstDate">First date:</label>
+
+            <input type="date" class="firstDate" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+        </div>
+
+        <div class="secondDateContainer">
+            <label for="secondDate">Second date:</label>
+
+            <input type="date" class="secondDate" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+        </div>
+    </div>
+
+</body>
+
+<!-- js script tags -->
+<script src="../js/matching-days.js"></script>
+<script src="../js/matching-days-dom.js"></script>
+
+</html>
