@@ -22,11 +22,11 @@ days.innerHTML = daysHtml;
 dateOne.addEventListener("change", () => {
     const date = new Date(dateOneVal).toLocaleDateString('en-US', { weekday: 'long' });
     App.updateDay(date);
-    App.selectDay(date);
+    App.addClassName(date);
 });
 
 dateTwo.addEventListener("change", () => {
     const date = new Date(dateTwoVal).toLocaleDateString('en-US', { weekday: 'long' });
     App.updateDay(date);
-    App.selectDay(date);
+    App.addClassName__(date);
 });

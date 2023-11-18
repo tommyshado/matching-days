@@ -29,7 +29,7 @@ describe("Matching days test", () => {
 
     it("should be able to select a day and get the selected day", () => {
         // takes in a string date
-        app.warningClassName("Monday");
+        app.addClassName("Monday");
 
         const days = app.getDays();
         let selectedDay;
@@ -45,7 +45,7 @@ describe("Matching days test", () => {
 
     it("should be able to add a warning class list for a selected day", () => {
         // takes in a string date
-        app.warningClassName("Sunday");
+        app.addClassName("Sunday");
 
         const days = app.getDays();
         let getSelectedDay = {};
@@ -67,10 +67,10 @@ describe("Matching days test", () => {
 
     it("should be able to add a danger class name for another selected day", () => {
         // select one day
-        app.warningClassName("Monday");
+        app.addClassName("Monday");
 
         // select another day
-        app.dangerClassName("Sunday");
+        app.addClassName__("Sunday");
 
 
         const days = app.getDays();
@@ -99,9 +99,9 @@ describe("Matching days test", () => {
 
     it("should be able to add a success class name for two selected days on the same day", () => {
         // select two same days
-        app.warningClassName("Monday");
+        app.addClassName("Monday");
 
-        app.dangerClassName("Monday");
+        app.addClassName__("Monday");
 
         const days = app.getDays();
         let getSelectedDay = {};
@@ -123,10 +123,10 @@ describe("Matching days test", () => {
 
     it("should be able to update a selected day", () => {
         // select one day
-        app.warningClassName("Sunday");
+        app.addClassName("Sunday");
 
         // select another day
-        app.dangerClassName("Monday");
+        app.addClassName__("Monday");
 
         const days = app.getDays();
         let getSelectedDay = [];

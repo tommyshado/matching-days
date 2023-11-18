@@ -1,0 +1,16 @@
+body {
+    background-color: #00171F;
+    color: #F2E8CF;
+}
+
+.success {
+    background-color: #386641;
+}
+
+.warning {
+    background-color: #FA824C;
+}
+
+.danger {
+    background-color: #931621;
+}
