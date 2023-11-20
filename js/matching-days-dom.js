@@ -2,8 +2,15 @@
 const dateOne = document.querySelector(".firstDate");
 const dateTwo = document.querySelector(".secondDate");
 
+
+let getDays;
+
+if (localStorage["days"]) {
+    getDays = JSON.parse(localStorage["days"]);
+};
+
 // App instance
-const App = matchingDays();
+const App = matchingDays(getDays);
 
 // Template source
 const templateSource = document.querySelector(".template").innerHTML;
@@ -24,6 +31,8 @@ dateOne.addEventListener("change", () => {
     App.addClassName(day);
 
     renderDays();
+
+    localStorage.setItem("days", JSON.stringify(App.getDays()));
 });
 
 dateTwo.addEventListener("change", () => {
@@ -31,4 +40,6 @@ dateTwo.addEventListener("change", () => {
     App.addClassName__(day);
 
     renderDays();
+
+    localStorage.setItem("days", JSON.stringify(App.getDays()));
 });
