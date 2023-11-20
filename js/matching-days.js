@@ -40,6 +40,10 @@ const matchingDays = () => {
                 dayOfTheWeek.classList = "";
             };
 
+            if (dayOfTheWeek.classList === "warning") {
+                dayOfTheWeek.classList = "";
+            };
+
             if (dayOfTheWeek.day === weekday) {
                 if (!dayOfTheWeek.classList) {
                     dayOfTheWeek.classList = "warning";
@@ -53,6 +57,10 @@ const matchingDays = () => {
     const addClassName__ = (weekday) => {
         days.forEach((dayOfTheWeek) => {
             if (dayOfTheWeek.classList === "success") {
+                dayOfTheWeek.classList = "";
+            };
+
+            if (dayOfTheWeek.classList === "danger") {
                 dayOfTheWeek.classList = "";
             };
 
