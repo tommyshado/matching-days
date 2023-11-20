@@ -14,19 +14,28 @@ const templateSource = document.querySelector(".template").innerHTML;
 let days = document.querySelector(".days");
 const template = Handlebars.compile(templateSource);
 
-let daysHtml = template(App.getDays());
-days.innerHTML = daysHtml;
+const renderDays = () => {
+    let daysHtml = template(App.getDays());
+    days.innerHTML = daysHtml;
+};
+
+renderDays();
 
 // Events
 
 dateOne.addEventListener("change", () => {
-    const date = new Date(dateOneVal).toLocaleDateString('en-US', { weekday: 'long' });
-    App.updateDay(date);
-    App.addClassName(date);
+    const day = new Date(dateOneVal).toLocaleDateString('en-US', { weekday: 'long' });
+    alert(day)
+    App.updateDay(day);
+    App.addClassName(day);
+
+    renderDays();
 });
 
 dateTwo.addEventListener("change", () => {
-    const date = new Date(dateTwoVal).toLocaleDateString('en-US', { weekday: 'long' });
-    App.updateDay(date);
-    App.addClassName__(date);
+    const day = new Date(dateTwoVal).toLocaleDateString('en-US', { weekday: 'long' });
+    App.updateDay(day);
+    App.addClassName__(day);
+
+    renderDays();
 });
