@@ -25,7 +25,6 @@ renderDays();
 
 dateOne.addEventListener("change", () => {
     const day = new Date(dateOneVal).toLocaleDateString('en-US', { weekday: 'long' });
-    alert(day)
     App.updateDay(day);
     App.addClassName(day);
 
