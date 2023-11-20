@@ -21,7 +21,6 @@ renderDays();
 
 dateOne.addEventListener("change", () => {
     const day = new Date(dateOne.value).toLocaleDateString('en-US', { weekday: 'long' });
-    App.updateDay(day);
     App.addClassName(day);
 
     renderDays();
@@ -29,7 +28,6 @@ dateOne.addEventListener("change", () => {
 
 dateTwo.addEventListener("change", () => {
     const day = new Date(dateTwo.value).toLocaleDateString('en-US', { weekday: 'long' });
-    App.updateDay(day);
     App.addClassName__(day);
 
     renderDays();

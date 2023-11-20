@@ -34,16 +34,12 @@ const matchingDays = () => {
         return days;
     };
 
-    const updateDay = (weekday) => {
-        days.forEach((dayOfTheWeek) => {
-            if (dayOfTheWeek.day === weekday && dayOfTheWeek.classList) {
-                dayOfTheWeek.classList = "";
-            };
-        });
-    };
-
     const addClassName = (weekday) => {
         days.forEach((dayOfTheWeek) => {
+            if (dayOfTheWeek.classList === "success") {
+                dayOfTheWeek.classList = "";
+            };
+
             if (dayOfTheWeek.day === weekday) {
                 if (!dayOfTheWeek.classList) {
                     dayOfTheWeek.classList = "warning";
@@ -56,6 +52,10 @@ const matchingDays = () => {
 
     const addClassName__ = (weekday) => {
         days.forEach((dayOfTheWeek) => {
+            if (dayOfTheWeek.classList === "success") {
+                dayOfTheWeek.classList = "";
+            };
+
             if (dayOfTheWeek.day === weekday) {
                 if (!dayOfTheWeek.classList) {
                     dayOfTheWeek.classList = "danger";
@@ -68,7 +68,6 @@ const matchingDays = () => {
 
     return {
         getDays,
-        updateDay,
         addClassName,
         addClassName__,
     };
