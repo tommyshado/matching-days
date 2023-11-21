@@ -1,7 +1,7 @@
 // References elements
 const dateOne = document.querySelector(".firstDate");
 const dateTwo = document.querySelector(".secondDate");
-
+const message = document.querySelector(".message");
 
 let getDays;
 
@@ -24,11 +24,45 @@ const renderDays = () => {
 
 renderDays();
 
+const getDay = (date) => {
+    return new Date(date.value).toLocaleDateString('en-US', { weekday: 'long' });
+};
+
+const setTimeoutFunc = () => {
+    return setTimeout(() => {
+        message.innerHTML = "";
+    }, 3000);
+};
+
 // Events
 
 dateOne.addEventListener("change", () => {
-    const day = new Date(dateOne.value).toLocaleDateString('en-US', { weekday: 'long' });
-    App.addClassName(day);
+    App.addClassName(getDay(dateOne));
+
+    const days = App.getDays();
+
+    let foundMatch = false;
+
+    days.forEach((dayOfTheWeek) => {
+        if (dayOfTheWeek.classList === "success") {
+            foundMatch = true;
+
+            setTimeoutFunc();
+        };
+    });
+
+    if (foundMatch) {
+        message.classList.remove("danger-text")
+        message.innerHTML = "Match found";
+        message.classList.add("success-text");
+        setTimeoutFunc();
+
+    } else {
+        message.classList.remove("success-text");
+        message.innerHTML = "Match not found";
+        message.classList.add("danger-text");
+        setTimeoutFunc();
+    };
 
     renderDays();
 
@@ -36,8 +70,32 @@ dateOne.addEventListener("change", () => {
 });
 
 dateTwo.addEventListener("change", () => {
-    const day = new Date(dateTwo.value).toLocaleDateString('en-US', { weekday: 'long' });
-    App.addClassName__(day);
+    App.addClassName__(getDay(dateTwo));
+
+    const days = App.getDays();
+
+    let foundMatch = false;
+
+    days.forEach((dayOfTheWeek) => {
+        if (dayOfTheWeek.classList === "success") {
+            foundMatch = true;
+
+            setTimeoutFunc();
+        };
+    });
+
+    if (foundMatch) {
+        message.classList.remove("danger-text")
+        message.innerHTML = "Match found";
+        message.classList.add("success-text");
+        setTimeoutFunc();
+
+    } else {
+        message.classList.remove("success-text");
+        message.innerHTML = "Match not found";
+        message.classList.add("danger-text");
+        setTimeoutFunc();
+    };
 
     renderDays();
 

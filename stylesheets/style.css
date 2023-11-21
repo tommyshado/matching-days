@@ -20,6 +20,14 @@ body {
     background-color: #931621;
 }
 
+.success-text {
+    color: #386641;
+}
+
+.danger-text {
+    color: #931621;
+}
+
 .container {
     padding-top: 2rem;
 }
