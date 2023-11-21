@@ -24,12 +24,7 @@ body {
     padding-top: 2rem;
 }
 
-h1 {
-    display: flex;
-    justify-content: center;
-}
-
-.days {
+.flex-items {
     display: flex;
     justify-content: center;
 }
@@ -38,11 +33,6 @@ li {
     list-style: none;
     padding: 1rem;
     border: solid 2px #ffffff;
-}
-
-.dates {
-    display: flex;
-    justify-content: center;
 }
 
 .firstDateContainer {
