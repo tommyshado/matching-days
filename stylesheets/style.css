@@ -20,6 +20,15 @@ body {
     background-color: #931621;
 }
 
+.container {
+    padding-top: 2rem;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 .days {
     display: flex;
     justify-content: center;
