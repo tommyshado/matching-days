@@ -74,9 +74,45 @@ const matchingDays = (storedDays) => {
         })
     };
 
+    const resetApp = () => {
+        days = [
+            {
+                day: "Monday",
+                classList: "",
+            },
+            {
+                day: "Tuesday",
+                classList: "",
+            },
+            {
+                day: "Wednesday",
+                classList: "",
+            },
+            {
+                day: "Thursday",
+                classList: "",
+            },
+            {
+                day: "Friday",
+                classList: "",
+            },
+            {
+                day: "Saturday",
+                classList: "",
+            },
+            {
+                day: "Sunday",
+                classList: "",
+            },
+        ];
+
+        return days;
+    };
+
     return {
         getDays,
         addClassName,
         addClassName__,
+        resetApp
     };
 };

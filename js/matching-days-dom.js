@@ -2,6 +2,7 @@
 const dateOne = document.querySelector(".firstDate");
 const dateTwo = document.querySelector(".secondDate");
 const message = document.querySelector(".message");
+const resetBtn = document.querySelector(".resetBtn");
 
 let getDays;
 
@@ -101,3 +102,16 @@ dateTwo.addEventListener("change", () => {
 
     localStorage.setItem("days", JSON.stringify(App.getDays()));
 });
+
+resetBtn.addEventListener("click", () => {
+    if (confirm("Press OK to reset selected days OR Cancel to abort")) {
+
+        localStorage.setItem("days", JSON.stringify(App.resetApp()));
+        
+        alert(JSON.stringify(App.getDays()));
+        location.reload();
+
+        message.innerHTML = "Successfully reseted selected days";
+        message.classList.add("success-text");
+    };
+})

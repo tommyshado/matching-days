@@ -72,14 +72,13 @@ describe("Matching days test", () => {
         // select another day
         app.addClassName__("Sunday");
 
-
         const days = app.getDays();
         let getSelectedDay = [];
 
         days.forEach((dayObj) => {
             if (dayObj.classList) {
                 getSelectedDay.push(dayObj);
-            };
+            }
         });
 
         assert.deepEqual(
@@ -118,6 +117,67 @@ describe("Matching days test", () => {
                 classList: "success",
             },
             getSelectedDay
+        );
+    });
+
+    it("should be able to clear selected days", () => {
+        // select two same days
+        app.addClassName("Monday");
+
+        app.addClassName__("Monday");
+
+        const days = app.getDays();
+        let getSelectedDay = {};
+
+        days.forEach((dayObj) => {
+            if (dayObj.classList) {
+                getSelectedDay = dayObj;
+            }
+        });
+
+        assert.deepEqual(
+            {
+                day: "Monday",
+                classList: "success",
+            },
+            getSelectedDay
+        );
+
+        // Reset selected day
+        const getDays = app.resetApp();
+
+        assert.deepEqual(
+            [
+                {
+                    day: "Monday",
+                    classList: "",
+                },
+                {
+                    day: "Tuesday",
+                    classList: "",
+                },
+                {
+                    day: "Wednesday",
+                    classList: "",
+                },
+                {
+                    day: "Thursday",
+                    classList: "",
+                },
+                {
+                    day: "Friday",
+                    classList: "",
+                },
+                {
+                    day: "Saturday",
+                    classList: "",
+                },
+                {
+                    day: "Sunday",
+                    classList: "",
+                },
+            ],
+            getDays
         );
     });
 });
