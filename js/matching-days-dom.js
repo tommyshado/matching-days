@@ -105,12 +105,11 @@ dateTwo.addEventListener("change", () => {
 
 resetBtn.addEventListener("click", () => {
     if (confirm("Press OK to reset selected days OR Cancel to abort")) {
-
         localStorage.setItem("days", JSON.stringify(App.resetApp()));
-
         location.reload();
-
-        message.innerHTML = "Successfully reseted selected days";
-        message.classList.add("success-text");
     };
+
+    message.innerHTML = "Successfully reseted selected days";
+    message.classList.add("success-text");
+    setTimeoutFunc();
 })
