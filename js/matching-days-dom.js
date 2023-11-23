@@ -107,8 +107,7 @@ resetBtn.addEventListener("click", () => {
     if (confirm("Press OK to reset selected days OR Cancel to abort")) {
 
         localStorage.setItem("days", JSON.stringify(App.resetApp()));
-        
-        alert(JSON.stringify(App.getDays()));
+
         location.reload();
 
         message.innerHTML = "Successfully reseted selected days";

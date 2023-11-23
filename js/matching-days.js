@@ -1,5 +1,5 @@
 const matchingDays = (storedDays) => {
-    const days = storedDays || [
+    let days = storedDays || [
         {
             day: "Monday",
             classList: "",
