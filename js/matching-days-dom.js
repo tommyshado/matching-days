@@ -108,8 +108,4 @@ resetBtn.addEventListener("click", () => {
         localStorage.setItem("days", JSON.stringify(App.resetApp()));
         location.reload();
     };
-
-    message.innerHTML = "Successfully reseted selected days";
-    message.classList.add("success-text");
-    setTimeoutFunc();
 })
